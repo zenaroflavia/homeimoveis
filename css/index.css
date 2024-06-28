@@ -1,0 +1,146 @@
+.brand-name {
+    margin-top: 20px;
+    margin-left: 45px;
+}
+
+.favorito{
+    float: right;
+    margin-right: 30px;
+    width: 6%;
+    cursor: pointer;
+}
+
+section {
+    margin-top: 20px;
+}
+
+section form {
+    margin-left: 45px;
+}
+
+.results {
+    display: grid;
+    column-gap: 14px;
+    row-gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
+    justify-content: space-around;
+}
+
+input[type="text"] {
+    border: solid 1px var(--primary-color);
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 4px;
+    display: inline-block;
+    width: 30%;
+}
+
+.listing {
+    background: var(--accent-color);
+    border-radius: 20px;
+    padding-bottom: 30px;
+}
+
+.listing-heading {
+    color: var(--primary-color);
+    padding: 10px 20px 0 20px;
+}
+
+.listing-photo {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 30px 30px 0 0;
+}
+
+.listing-location {
+    padding: 10px 20px 20px 20px;
+}
+
+.listing-location::before {
+    content: url("/assets/location-pin.svg") / "";
+}
+
+section.listing a {
+    padding-left: 20px;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+section.listing a::after {
+    content: "\203A";
+    margin-left: 5px;
+}
+
+
+.checkbox-wrapper {
+    display: inline-block;
+    position: relative;
+    padding-left: 25px; /* ajuste conforme necessário */
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 18px; /* ajuste conforme necessário */
+  }
+  
+  .checkbox-wrapper .custom-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .checkbox-label {
+    position: relative;
+    padding-left: 35px; /* ajuste conforme necessário para dar espaço ao ícone */
+  }
+  
+  .checkbox-label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px; /* tamanho do ícone */
+    height: 20px; /* tamanho do ícone */
+    border: 2px solid #aaa; /* cor da borda do checkbox */
+    background-color: #fff; /* cor de fundo do checkbox */
+    border-radius: 4px; /* borda arredondada, ajuste conforme necessário */
+  }
+  
+  .custom-checkbox:checked + .checkbox-label:before {
+    background-color: #2196F3; /* cor de fundo quando selecionado */
+    border-color: #2196F3; /* cor da borda quando selecionado */
+  }
+  
+  .checkbox-label:after {
+    content: '';
+    position: absolute;
+    top: 4px; /* ajuste para centralizar o ícone verticalmente */
+    left: 4px; /* ajuste para centralizar o ícone horizontalmente */
+    width: 12px; /* tamanho do ícone de check */
+    height: 6px; /* tamanho do ícone de check */
+    border: solid #fff; /* cor do ícone de check */
+    border-width: 0 2px 2px 0; /* ajuste para forma do ícone de check */
+    transform: rotate(45deg); /* rotação do ícone de check */
+    opacity: 0; /* ícone invisível por padrão */
+  }
+  
+  .custom-checkbox:checked + .checkbox-label:after {
+    opacity: 1; /* ícone visível quando selecionado */
+  }
+
+
+
+@media (min-width: 500px) and (max-width: 768px) {
+    .results {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    input[type="text"] {
+        width: 70%;
+    }
+}
+
+@media (max-width: 499px) {
+    .results {
+        grid-template-columns: 1fr;
+    }
+}
